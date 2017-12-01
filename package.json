@@ -1,0 +1,21 @@
+{
+  "name": "google-plus-authentication",
+  "version": "1.0.0",
+  "description": "Simple authentication usng google plus",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-eldrego.com:eldrego/google-plus-authentication.git"
+  },
+  "keywords": [
+    "Google",
+    "google-plus",
+    "authentication",
+    "signin"
+  ],
+  "author": "Mark Edomwande",
+  "license": "ISC"
+}
