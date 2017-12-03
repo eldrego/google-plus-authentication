@@ -4,15 +4,18 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const Session = require('express-session');
 
 const app = express();
 const login = require('./routes/login');
+const configSession = require('./config/session.js');
 // const users = require('./routes/users');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(Session(configSession));
 
 app.engine('.hbs', hbs({ extname: '.hbs' }));
 app.set('views', path.join(__dirname, 'views'));
