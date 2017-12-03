@@ -3,13 +3,15 @@ const hbs = require('express-handlebars');
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const http = require('http');
 const cookieParser = require('cookie-parser');
 const Session = require('express-session');
 
-const app = express();
 const login = require('./routes/login');
 const configSession = require('./config/session.js');
-// const users = require('./routes/users');
+
+const app = express();
+const port = parseInt(process.env.PORT, 10) || 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -22,11 +24,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', '.hbs');
 
 app.use('/', login);
-// app.use('/users', users);
-
-// app.get('/url', (req, res) => {
-//   res.send(url);
-// });
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
@@ -46,4 +43,16 @@ app.use((err, req, res, next) => {
   res.render('error', { title: 'Error', message: err.message });
 });
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'));
+// app.listen(3000, () => console.log('Example app listening on port 3000!'));
+
+const server = http.createServer(app);
+
+server.listen(port, (error) => {
+  if (error) {
+    // winston.log(error);
+  } else {
+    // open(`http://localhost:${port}`);
+  }
+});
+
+module.exports = server;
