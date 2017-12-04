@@ -4,7 +4,7 @@
   "description": "Simple authentication usng google plus",
   "main": "index.js",
   "scripts": {
-    "test": "mocha && npm run cover",
+    "test": "_mocha",
     "test-nyc-reporter": "nyc --reporter=text mocha",
     "cover": "istanbul cover _mocha -- -R spec",
     "coveralls": "npm run cover lcovonly && cat ./coverage/lcov.info | coveralls",
