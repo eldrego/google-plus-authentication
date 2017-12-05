@@ -1,3 +1,4 @@
+const wtf = require('wtfnode');
 const { assert } = require('chai');
 const request = require('supertest');
 
@@ -7,8 +8,12 @@ describe('Server', () => {
   it('should return 200', (done) => {
     request(server)
       .get('/')
-      // .expect('Content-Type', 'text/html; charset=utf-8/')
-      // .expect('Content-Length', '34')
+      .expect(200, done);
+  });
+
+  it('should return 200 for details endpoint', (done) => {
+    request(server)
+      .get('/details')
       .expect(200, done);
   });
 
@@ -18,3 +23,5 @@ describe('Server', () => {
       .expect(404, done);
   });
 });
+
+wtf.dump();

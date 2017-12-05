@@ -4,9 +4,12 @@
   "description": "Simple authentication usng google plus",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "_mocha",
     "test-nyc-reporter": "nyc --reporter=text mocha",
     "cover": "istanbul cover _mocha -- -R spec",
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha",
     "coveralls": "npm run cover lcovonly && cat ./coverage/lcov.info | coveralls",
     "open-nyc": "open coverage/lcov-report/index.html",
     "open-istanbul": "open coverage/index.html"
@@ -29,8 +32,8 @@
     "eslint": "^4.12.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
-    "istanbul": "^0.4.5",
-    "mocha": "^4.0.1",
+    "istanbul": "^1.0.0-alpha.2",
+    "mocha": "^3.5.3",
     "mocha-lcov-reporter": "^1.3.0",
     "nyc": "^11.3.0",
     "supertest": "^3.0.0"
@@ -48,6 +51,8 @@
     "jsonwebtoken": "^8.1.0",
     "morgan": "^1.9.0",
     "nodemon": "^1.12.1",
-    "open": "0.0.5"
+    "open": "0.0.5",
+    "why-is-node-running": "^1.2.3",
+    "wtfnode": "^0.5.6"
   }
 }
