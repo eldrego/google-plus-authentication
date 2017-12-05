@@ -1,8 +1,13 @@
-JavaScript: true
-Ruby: false
-Python: false
-PHP: false
+engines:
+  eslint:
+    enabled: true
+    config:
+      config: .eslintrc.json
+    extensions:
+    - .es6
+    - .js
 
-exclude_paths:
-- test/**/*
-- vendor/**/*
+ratings:
+   paths:
+   - "**.es6"
+- "**.js"
