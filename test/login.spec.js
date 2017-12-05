@@ -1,4 +1,3 @@
-const wtf = require('wtfnode');
 const { assert } = require('chai');
 const request = require('supertest');
 
@@ -23,5 +22,3 @@ describe('Server', () => {
       .expect(404, done);
   });
 });
-
-wtf.dump();
