@@ -7,9 +7,3 @@ plugins:
     extensions:
     - .es6
     - .js
-exclude_patterns:
-- "config/
-- "**/node_modules/"
-- "**/spec/"
-- "**/test/"
-- "**/tests/"

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "_mocha",
+    "test": "_mocha && npm run cover",
     "test-nyc-reporter": "nyc --reporter=text mocha",
     "cover": "istanbul cover _mocha -- -R spec",
     "coverage": "istanbul cover node_modules/mocha/bin/_mocha",
