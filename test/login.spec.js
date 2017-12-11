@@ -14,7 +14,7 @@ describe('Server', () => {
       .get('/details')
       .expect(200)
       .end((err) => {
-        expect('statusCode', 200)
+        expect('statusCode', 200);
         done(err);
       });
   });
