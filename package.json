@@ -6,9 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "_mocha && npm run cover",
+    "test": "istanbul cover _mocha -- -R spec",
     "test-nyc-reporter": "nyc --reporter=text mocha",
-    "cover": "istanbul cover _mocha -- -R spec",
     "coverage": "istanbul cover node_modules/mocha/bin/_mocha",
     "coveralls": "npm run cover lcovonly && cat ./coverage/lcov.info | coveralls",
     "open-nyc": "open coverage/lcov-report/index.html",
