@@ -1,19 +1,23 @@
-const { assert } = require('chai');
 const request = require('supertest');
-
+const { expect } = require('chai');
 const server = require('../index.js');
 
 describe('Server', () => {
-  it('should return 200', (done) => {
+  it('should return 200 if the server is running', (done) => {
     request(server)
       .get('/')
+      .expect('Content-Length', '2108')
       .expect(200, done);
   });
 
-  it('should return 200 for details endpoint', (done) => {
+  it('should return 200 for "/details" endpoint', (done) => {
     request(server)
       .get('/details')
-      .expect(200, done);
+      .expect(200)
+      .end((err) => {
+        expect('statusCode', 200)
+        done(err);
+      });
   });
 
   it('should return 404 for non existent routes', (done) => {
