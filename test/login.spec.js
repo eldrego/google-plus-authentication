@@ -6,7 +6,6 @@ describe('Server', () => {
   it('should return 200 if the server is running', (done) => {
     request(server)
       .get('/')
-      .expect('Content-Length', '2108')
       .expect(200, done);
   });
 
